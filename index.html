@@ -14,8 +14,8 @@
             <div id="container">
                 <input type="text" placeholder="Inserisci Task">
                 <ul>
-                    <li v-for="(task, index) in tasks" :class="this.tasks[task].done === true ? 'line-through' : '' " @click="this.clickTaskText(index)">
-                        <span>{{ task.text }}</span>
+                    <li v-for="(task, index) in tasks" :class="task.done ? 'line-through' : '' ">
+                        <span  @click="this.clickTaskText(index)">{{ task.text }}</span>
                         <i class="fa-solid fa-xmark"></i>
                         <pre>{{tasks}}</pre>
                     </li>

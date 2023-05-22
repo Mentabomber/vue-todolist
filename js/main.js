@@ -38,14 +38,14 @@ createApp ({
     },
     methods:{
         clickTaskText(task){
-            console.log(this.tasks[task].done);
+            
             if(this.tasks[task].done === false){
-                this.tasks.done = true;
+                this.tasks[task].done = true;
             }
             else if(this.tasks[task].done === true){
-                this.tasks.done = false;
+                this.tasks[task].done = false;
             }
-
+            console.log(this.tasks[task].done);
         }
     }
     }
