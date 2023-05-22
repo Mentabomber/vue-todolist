@@ -19,6 +19,10 @@ const { createApp } = Vue;
 createApp ({
     data(){
         return{
+            newTask: {
+                text: "",
+                done: false
+            },
             tasks: [
                 {
                     text: "fai la spesa",
@@ -46,6 +50,15 @@ createApp ({
                 this.tasks[task].done = false;
             }
             console.log(this.tasks[task].done);
+        },
+        insertNewTask(){
+            this.tasks.unshift({text: this.newTask.text, done: false});
+            this.newTask.text = "";
+            console.log(this.tasks, this.newTask);
+        },
+        deleteTask(index){
+            console.log("funziona");
+            this.tasks.splice(index, 1);
         }
     }
     }
