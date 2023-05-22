@@ -30,3 +30,11 @@ li{
     font-style: italic;
 
 }
+
+.line-through{
+    text-decoration: line-through;
+}
+
+.no-line-decoration{
+    text-decoration: none;
+}
