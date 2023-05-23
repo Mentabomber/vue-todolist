@@ -52,9 +52,21 @@ createApp ({
             console.log(this.tasks[task].done);
         },
         insertNewTask(){
-            this.tasks.unshift({text: this.newTask.text, done: false});
-            this.newTask.text = "";
-            console.log(this.tasks, this.newTask);
+            // this.tasks.push(this.newTask);
+            // this.newTask.text = ""; 
+            // this.newTask.done = false;
+            console.log(this.newTask.text.length);
+            if(this.newTask.text.length === 0 || this.newTask.text.length < 5){
+                
+                alert("inserisci una task con almeno 5 caratteri")
+            }
+            else{
+                this.tasks.unshift({text: this.newTask.text, done: false});
+                // this.newTask = {text: "", done: false};
+                this.newTask.text = ""; 
+            }
+            
+            // console.log(this.tasks, this.newTask);
         },
         deleteTask(index){
             console.log("funziona");

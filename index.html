@@ -17,9 +17,11 @@
                 <ul>
                     <li v-for="(task, index) in tasks" >
                         <span  :class="task.done ? 'line-through' : '' " @click="this.clickTaskText(index)">{{ task.text }}</span>
-                        <i class="fa-solid fa-xmark" @click="deleteTask(index)"></i>
-                        <pre>{{task}}</pre>
+                        <i class="fa-solid fa-xmark" @click.stop="deleteTask(index)"></i>
+                        
+                        <!-- <pre>{{task}}</pre> -->
                     </li>
+                    <h2 v-if="tasks.length === 0">No Tasks</h2>
                 </ul>
             </div>
         </div>
